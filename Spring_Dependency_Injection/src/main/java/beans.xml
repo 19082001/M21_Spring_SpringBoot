@@ -1,0 +1,55 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+			<!-- Dependency in form of Literals (Setters method) -->
+ 	<!--  <bean  id="s1" class= "com.tns.di.Student" >
+		<property name="StudentName" value="Mahendra Patel" />
+		<property name="id" value="101" />
+	</bean>-->
+			<!-- Dependency in form of Literals (Constructor method) -->
+	<!-- <bean  id="s2" class= "com.tns.di.Student" >
+	  	<constructor-arg name="studentName" value="Max" />
+	 	<constructor-arg name="id" value="102" />
+	</bean> -->
+
+
+			<!-- Dependency in form of Object (Setters method) -->
+	<!-- <bean id="s1" class="com.tns.di1.Student1" >
+		<property name="c" >
+		<bean class="com.tns.di1.Cheat"/>
+		</property>
+	</bean> -->
+	
+	
+		<!-- Dependency in form of Collection (Setters method) -->
+	<bean id="s2" class="com.tns.di2.College">
+		<property name="ClgId" value="1021" />
+        <property name="ClgName" value="Theem" />
+	 
+	 
+        
+        <property name="students">
+            <list>
+                <ref bean="std1" />
+                <ref bean="std2" />
+                
+            </list>
+        </property>
+	
+	</bean>
+	
+	<bean id="std1" class="com.tns.di2.Student2">
+        <property name="StdId" value="101" />
+        <property name="StdName" value="Roy" />
+    </bean>
+	
+	<bean id="std2" class="com.tns.di2.Student2">
+        <property name="StdId" value="102" />
+        <property name="StdName" value="Jason" />
+    </bean>
+	
+
+</beans>
